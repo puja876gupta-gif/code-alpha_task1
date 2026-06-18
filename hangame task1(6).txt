@@ -1,0 +1,32 @@
+import random
+
+print("🎯 GUESS THE NUMBER GAME")
+
+secret = random ran dint(1, 100)
+attempts = 7
+
+while attempts > 0:
+
+    guess = int(input("Guess a number between 1 and 100: "))
+
+    if guess == secret:
+        print("🏆 Congratulations! You guessed it correctly.")
+        break
+
+    difference = abs(secret - guess)
+
+    if difference <= 5:
+        print("🔥 Very Close!")
+
+    elf guess < secret:
+        print("📉 Your guess is smaller.")
+
+    else:
+        print("📈 Your guess is bigger.")
+
+    attempts -= 1
+    print("Remaining Attempts:", attempts)
+
+if attempts == 0:
+    print("❌ Game Over!")
+    print("The correct number was:", secret)

@@ -1,0 +1,28 @@
+word = "python"
+guesses = ""
+chances = 6
+
+while chances > 0:
+    display = ""
+
+    for letter in word:
+        if letter in guesses:
+            display += letter
+        else:
+            display += "_"
+
+    print(display)
+
+    if display == word:
+        print("You Win!")
+        break
+
+    guess = input("Enter a letter: ")
+    guesses += guess
+
+    if guess not in word:
+        chances -= 1
+        print("Wrong! Chances left:", chances)
+
+if chances == 0:
+    print("Game Over! Word was:", word)

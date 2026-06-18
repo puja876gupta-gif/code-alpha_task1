@@ -1,0 +1,45 @@
+import random
+
+wordlist = ["banana", "laptop", "elephant", "cricket", "library"]
+secret word = random. Choice(wordlist)
+
+attempts = 6
+letters guessed = set()
+
+print("=== HANGMAN GAME ===")
+
+while attempts > 0:
+    hidden word = ""
+
+    for char in secret word:
+        if char in letters guessed:
+            hidden word += char + " "
+        else:
+            hidden word += "_ "
+
+    print("\Nord:", hidden word)
+
+    if "_" not in hidden word:
+        print("🎉 You Win!")
+        print("The word is:", secret word)
+        break
+
+    user input = input("Guess a letter: ").lower()
+
+    if Len(user input) != 1 or not user input is alpha():
+        print("⚠ Please enter a single letter.")
+        continue
+
+    if user input in letters guessed:
+        print("You already tried this letter.")
+        continue
+
+    letters guessed add(user input)
+
+    if user input not in secret word:
+        attempts -= 1
+        print(f"❌ Incorrect! Remaining attempts: {attempts}")
+    else:
+        print("✅ Correct Guess!")
+
+if attempts == 0:
